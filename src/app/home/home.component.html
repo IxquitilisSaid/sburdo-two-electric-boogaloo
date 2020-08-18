@@ -1,11 +1,21 @@
-<p>home works!</p>
+<p>Yes, this is Home</p>
 
-<ul>
-    <li *ngFor="let page of links$ | async">
-        {{ page.route }} {{ page.arbitraryValue }}
+<div class="container mx-auto mt-3 px-4">
+    <ul class="list-reset relative">
+        <li *ngFor="let page of links$ | async" class="my-4 animated task-item">
+            <div class="bg-white leading-none rounded-lg shadow overflow-hidden p-3 mb-4">
+                <div class="flex items-center">
+                    <div class="flex-grow">
+                        <p class="font-semibold text-lg mx-2 text-left flex-auto cursor-pointer" *ngFor="let arrayItem of page.arbitraryArray">
+                            {{ arrayItem }}
+                        </p>
 
-        <span *ngFor="let arrayItem of page.arbitraryArray">
-            {{ arrayItem }}
-        </span>
-    </li>
-</ul>
+                        <span class="flex flex-no-shrink mr-2 mt-2 px-2 py-1 text-xs cursor-pointer text-grey-dark">
+                            {{ page.route }} {{ page.arbitraryValue }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
         // debug current pages
         this.links$.subscribe((links) => {
             console.log(links);
+            console.log('Snus');
         });
     }
 }
